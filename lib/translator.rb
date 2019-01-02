@@ -18,7 +18,7 @@ end
 
 def get_japanese_emoticon(file, emoticon)
   library = load_library(file)
-  binding.pry
+  if library.include?
   
   
   # sorry_message = "Sorry, that emoticon was not found"
