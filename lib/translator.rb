@@ -1,7 +1,19 @@
-# require modules here
 
-def load_library
-  # code goes here
+# require modules here
+require "yaml"
+require 'pry'
+
+def load_library(file)
+  emoticons_hash = YAML.load_file(file)
+  library = {}
+  library["get_meaning"] = {}
+  library["get_emoticon"] = {}
+  emoticons_hash.each {|x,y|
+
+  library["get_meaning"][y[1]] = x
+  library["get_emoticon"][y[0]] = y[1]
+  }
+library
 end
 
 def get_japanese_emoticon
